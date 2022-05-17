@@ -6,9 +6,12 @@
     $password = "J2hv51D7pz3mRtP";
 
 
-    if($conecta = mysqli_connect($hostname, $username, $password, $database)){
-        echo 'conectando ao banco de dados ' . $database .'.........';
+    try{
+        $pdo = new PDO('mysqli:host=' .$hostname. ';database=' .$database, $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //echo 'ação realizada com sucesso';
     }
-    else{
-        echo 'erro:' .mysqli_connect_error();
+    catch (PDOException $e){
+        echo 'error: ' .$e->getMessage(); 
     }
+   
