@@ -1,5 +1,8 @@
-$(document).ready(function(){
-    $('.nav-link').click(function(e){
+$(document).ready(function() {
+
+
+    $('.nav-link').click(function(e) {
+
         e.preventDefault()
 
         let url = $(this).attr('href')
@@ -7,6 +10,5 @@ $(document).ready(function(){
         $('#content').empty()
 
         $('#content').load(url)
-
     })
 })
