@@ -1,13 +1,16 @@
-<?php 
 
-    //VARIÁVEIS PARA REALIZAÇÃO DA CONEXÃO COM O BANCO DE DADOS
-    $hostname = "sql102.epizy.com";
-    $database = "epiz_31454913_rifa";
-    $username = "epiz_31454913";
-    $password = "M6m7AzPVkGmP9Q6";
 
-    if($conecta = mysqli_connect($hostname, $username, $password, $database)){
-        echo 'Conectado ao banco de dados ' . $database . '.......'
-    } else{
-        echo 'Erro: ' . mysqli_connect_error();
-    }
+<?php
+
+$hostname = "sql102.epizy.com";
+$dbname = "epiz_31454632_rifa";
+$username = "epiz_31454632";
+$password = "0wDpvJ3s9MJ";
+
+try {
+    $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo 'Conecao';
+} catch (PDOException $e) {
+    echo 'Error: '.$e->getMessage();
+}
