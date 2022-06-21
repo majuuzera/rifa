@@ -24,7 +24,8 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
                 $stmt->execute(array(
-                    ':a' => $requestData['NOME']
+                    // ':a' => utf8_decode($requestData['NOME']),
+                    ':a' => $requestData['NOME'],
                     ':b' => $requestData['CELULAR']
                 ));
                 $dados = array(
@@ -40,11 +41,12 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a, TELEFONE = :b WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a, CELULAR = :b WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
+                    // ':a' => utf8_decode($requestData['NOME']),
                     ':a' => $requestData['NOME'],
-                    ':b' => $requestData['CELULAR'],
+                    ':b' => $requestData['CELULAR']
                 ));
                 $dados = array(
                     "tipo" => 'success',

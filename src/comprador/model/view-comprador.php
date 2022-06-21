@@ -16,7 +16,7 @@
     if($resultado){
         $result = array();
         while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
-            $result = array_map(null,, $row);
+            $result = array_map(null, $row);
         }
         $dados = array(
             'tipo' => 'success',

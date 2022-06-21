@@ -8,7 +8,7 @@
 
     //conexao off
     $hostname = "localhost"; //Nome do servidor que se encontra nosso banco de dados
-    $dbname = "rifa"; //Nome do nosso banco de dados
+    $dbname = "rifas"; //Nome do nosso banco de dados
     $username = "root"; //Nome do usuário para acesso ao banco de daddos
     $password = ""; //Senha de acesso ao nosso banco de daddos
 
